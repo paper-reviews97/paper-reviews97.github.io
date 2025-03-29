@@ -36,8 +36,8 @@
                 <nav class="nav">
                     <ul class="nav-links">
                         <li><a href="https://paper-reviews97.github.io" class="nav-link">Home</a></li>
-                        <!-- <li><a href="index.html#categories" class="nav-link active">Categories</a></li> -->
-                        <li><a href="index.html#featured" class="nav-link">Featured</a></li>
+                        <li><a href="https://paper-reviews97.github.io#categories" class="nav-link active">Categories</a></li>
+                        <li><a href="https://paper-reviews97.github.io#featured" class="nav-link">Featured</a></li>
                         <li><a href="index.html#about" class="nav-link">About</a></li>
                     </ul>
                     <div class="nav-actions">
@@ -109,7 +109,7 @@
                             <option value="all">All Publications</option>
                             <option value="arXiv">arXiv</option>
                             <option value="NeurIPS">NeurIPS</option>
-                            <!-- <option value="Anthropic">Anthropic</option> -->
+                            <option value="RA-L">RA-L</option>
                             <!-- <option value="Google">Google</option> -->
                             <!-- <option value="Meta AI">Meta AI</option> -->
                             <!-- <option value="Microsoft">Microsoft</option> -->
@@ -121,13 +121,13 @@
                         <label for="filter-tag">Topic</label>
                         <select id="filter-tag" class="filter-select">
                             <option value="all">All Topics</option>
-                            <option value="Transformers">Transformers</option>
-                            <option value="Attention">Attention Mechanisms</option>
-                            <option value="Architecture">Architecture Design</option>
-                            <option value="Generative">Generative Models</option>
-                            <option value="Multimodal">Multimodal Models</option>
-                            <option value="Scaling">Scaling Laws</option>
-                            <option value="Efficiency">Model Efficiency</option>
+                            <option value="Gran Turismo">Gran Turismo</option>
+                            <option value="Assetto Corsa">Assetto Corsa</option>
+                            <option value="CARLA">CARLA</option>
+                            <!-- <option value="Generative">Generative Models</option> -->
+                            <!-- <option value="Multimodal">Multimodal Models</option> -->
+                            <!-- <option value="Scaling">Scaling Laws</option> -->
+                            <!-- <option value="Efficiency">Model Efficiency</option> -->
                         </select>
                     </div>
                     
@@ -339,7 +339,7 @@
                     </div>
                 </div> -->
 
-                <div class="paper-list-item" data-year="2024" data-org="arXiv" data-tags="XNet">
+                <!-- <div class="paper-list-item" data-year="2024" data-org="arXiv" data-tags="XNet">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
@@ -394,33 +394,33 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- KAN Paper -->
-                <div class="paper-list-item" data-year="2025" data-org="NeurIPS" data-tags="KAN,Kolmogrov-Arnold representation theorem">
+                <div class="paper-list-item" data-year="2021" data-org="RA-L" data-tags="Gran Turismo,Kolmogrov-Arnold representation theorem">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
-                                <span class="paper-year">2025</span>
-                                <span class="paper-org">NeurIPS (Oral)</span>
-                                <span class="paper-citation-count">964+ citations</span>
+                                <span class="paper-year">2021</span>
+                                <span class="paper-org">RA-L</span>
+                                <span class="paper-citation-count">167+ citations</span>
                             </div>
-                            <h3 class="paper-list-title">KAN: Kolmogorov-Arnold Networks</h3>
-                            <p class="paper-list-authors">Ziming Liu, Yixuan Wang, Sachin Vaidya, Fabian Ruehle, James Halverson, Marin Soljačić, Thomas Y. Hou, Max Tegmark</p>
+                            <h3 class="paper-list-title">Super-Human Performance in Gran Turismo Sports Using Deep Reinforcement Learning</h3>
+                            <p class="paper-list-authors">Florian Fuchs, Yunlong Song, Elia Kaufmann, Davide Scaramuzza, Peter Duerr</p>
                         </div>
                         
                         <div class="paper-list-body">
-                            <p class="paper-list-abstract">Inspired by the Kolmogorov-Arnold representation theorem, we propose Kolmogorov-Arnold Networks (KANs) as promising alternatives to Multi-Layer Perceptrons (MLPs). While MLPs have fixed activation functions on nodes ("neurons"), KANs have learnable activation functions on edges ("weights"). KANs have no linear weights at all -- every weight parameter is replaced by a univariate function parametrized as a spline. We show that this seemingly simple change makes KANs outperform MLPs in terms of accuracy and interpretability. For accuracy, much smaller KANs can achieve comparable or better accuracy than much larger MLPs in data fitting and PDE solving. Theoretically and empirically, KANs possess faster neural scaling laws than MLPs. For interpretability, KANs can be intuitively visualized and can easily interact with human users. Through two examples in mathematics and physics, KANs are shown to be useful collaborators helping scientists (re)discover mathematical and physical laws. In summary, KANs are promising alternatives for MLPs, opening opportunities for further improving today's deep learning models which rely heavily on MLPs.</p>
+                            <p class="paper-list-abstract">Autonomous car racing is a major challenge in robotics. It raises fundamental problems for classical approaches such as planning minimum-time trajectories under uncertain dynamics and controlling the car at the limits of its handling. Besides, the requirement of minimizing the lap time, which is a sparse objective, and the difficulty of collecting training data from human experts have also hindered researchers from directly applying learning-based approaches to solve the problem. In the present work, we propose a learning-based system for autonomous car racing by leveraging a high-fidelity physical car simulation, a course-progress proxy reward, and deep reinforcement learning. We deploy our system in Gran Turismo Sport, a world-leading car simulator known for its realistic physics simulation of different race cars and tracks, which is even used to recruit human race car drivers. Our trained policy achieves autonomous racing performance that goes beyond what had been achieved so far by the built-in AI, and, at the same time, outperforms the fastest driver in a dataset of over 50,000 human players.</p>
                             
                             <div class="paper-list-tags">
-                                <span class="tag">KAN</span>
-                                <span class="tag">Kolmogrov-Arnold representation theorem</span>
+                                <span class="tag">Gran Turismo</span>
+                                <!-- <span class="tag">Kolmogrov-Arnold representation theorem</span> -->
                             </div>
                         </div>
                         
                         <div class="paper-list-footer">
                             <div class="paper-links">
-                                <a href="https://arxiv.org/abs/2404.19756" class="paper-link-btn">
+                                <a href="https://arxiv.org/abs/2008.07971" class="paper-link-btn">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -455,26 +455,25 @@
                     </div>
                 </div>
 
-                <!-- Add more papers here with similar structure -->
                 <!-- FAN Paper -->
-                <div class="paper-list-item" data-year="2024" data-org="arXiv" data-tags="Architecture,Transformers,Efficiency">
+                <div class="paper-list-item" data-year="2024" data-org="NeurIPS" data-tags="Assetto-Corsa,Transformers,Efficiency">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
                                 <span class="paper-year">2024</span>
-                                <span class="paper-org">arXiv</span>
-                                <span class="paper-citation-count">3+ citations</span>
+                                <span class="paper-org">NeurIPS (Poster)</span>
+                                <span class="paper-citation-count">6+ citations</span>
                             </div>
-                            <h3 class="paper-list-title">FAN: Fourier Analysis Networks</h3>
-                            <p class="paper-list-authors">Yihong Dong, Ge Li, Yongding Tao, Xue Jiang, Kechi Zhang, Jia Li, Jinliang Deng, Jing Su, Jun Zhang, Jingjing Xu</p>
+                            <h3 class="paper-list-title">A Simulation Benchmark for Autonomous Racing with Large-Scale Human Data</h3>
+                            <p class="paper-list-authors">Adrian Remonda, Nicklas Hansen, Ayoub Raji, Nicola Musiu, Marko Bertogna, Eduardo E. Veas, Xiaolong Wang</p>
                         </div>
                         
                         <div class="paper-list-body">
-                            <p class="paper-list-abstract">We introduce Fourier Analysis Networks (FAN), a novel architecture that leverages frequency domain analysis for efficient sequence modeling. By decomposing input sequences into frequency components, FAN enables more efficient computation while maintaining or improving performance compared to traditional transformer models, offering improved efficiency particularly for long sequences.</p>
+                            <p class="paper-list-abstract">Despite the availability of international prize-money competitions, scaled vehicles, and simulation environments, research on autonomous racing and the control of sports cars operating close to the limit of handling has been limited by the high costs of vehicle acquisition and management, as well as the limited physics accuracy of open-source simulators. In this paper, we propose a racing simulation platform based on the simulator Assetto Corsa to test, validate, and benchmark autonomous driving algorithms, including reinforcement learning (RL) and classical Model Predictive Control (MPC), in realistic and challenging scenarios. Our contributions include the development of this simulation platform, several state-of-the-art algorithms tailored to the racing environment, and a comprehensive dataset collected from human drivers. Additionally, we evaluate algorithms in the offline RL setting. All the necessary code (including environment and benchmarks), working examples, and datasets are publicly released and can be found at: https://github.com/dasGringuen/assetto_corsa_gym.</p>
                             
                             <div class="paper-list-tags">
-                                <span class="tag">FAN</span>
-                                <span class="tag">Fourier Analysis</span>
+                                <span class="tag">Assetto-Corsa</span>
+                                <!-- <span class="tag">Fourier Analysis</span> -->
                                 <!-- <span class="tag">Transformers</span> -->
                                 <!-- <span class="tag">Efficiency</span> -->
                             </div>
@@ -482,7 +481,7 @@
                         
                         <div class="paper-list-footer">
                             <div class="paper-links">
-                                <a href="https://arxiv.org/abs/2410.02675" class="paper-link-btn">
+                                <a href="https://arxiv.org/abs/2407.16680" class="paper-link-btn">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -567,7 +566,7 @@
                         <ul class="footer-links">
                             <li><a href="https://paper-reviews97.github.io">Home</a></li>
                             <li><a href="https://paper-reviews97.github.io/#categories">Categories</a></li>
-                            <li><a href="index.html#featured">Featured</a></li>
+                            <li><a href="https://paper-reviews97.github.io#featured">Featured</a></li>
                             <li><a href="https://leejisue.github.io/">About</a></li>
                         </ul>
                     </div>
