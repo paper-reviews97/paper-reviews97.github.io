@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fundamental Networks Paper Reviews - A collection of AI research paper reviews focusing on core architectures and innovations in neural networks">
+    <title>Fundamental Networks - Paper Reviews</title>
+    <link rel="stylesheet" href="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/fundamental-networks/css/styles.css">
+    <link rel="stylesheet" href="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/fundamental-networks/css/paper-list.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <div class="header-sensor"></div>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#F4F0FF"/>
+                        <path d="M20 8L32 14.5V27.5L20 34L8 27.5V14.5L20 8Z" stroke="#6E56CF" stroke-width="2"/>
+                        <path d="M20 21V34M20 8V21M8 14.5L20 21L32 14.5" stroke="#6E56CF" stroke-width="2"/>
+                        <circle cx="20" cy="21" r="3" fill="#6E56CF"/>
+                    </svg>
+                    <h1 class="logo-text">Paper Reviews</h1>
+                </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="index.html#categories" class="nav-link active">Categories</a></li>
+                        <li><a href="index.html#featured" class="nav-link">Featured</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="#" class="btn btn-primary">Subscribe</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category header -->
+    <section class="category-header">
+        <div class="container">
+            <div class="category-header-content">
+                <div class="category-icon-large">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="category-header-text">
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <a href="index.html#categories">Categories</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-current">Fundamental Networks</span>
+                    </div>
+                    <h2 class="category-title-large">Fundamental Networks</h2>
+                    <p class="category-description-large">Core architectures and innovations in neural networks, transformers, and generative models that form the foundation of modern AI research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter and search section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="search-container">
+                    <input type="text" id="paper-search" class="search-input" placeholder="Search papers...">
+                    <button class="search-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="filter-dropdowns">
+                    <div class="filter-group">
+                        <label for="filter-year">Year</label>
+                        <select id="filter-year" class="filter-select">
+                            <option value="all">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="older">2019 & Older</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-org">Organization</label>
+                        <select id="filter-org" class="filter-select">
+                            <option value="all">All Organizations</option>
+                            <option value="DeepMind">DeepMind</option>
+                            <option value="OpenAI">OpenAI</option>
+                            <option value="Anthropic">Anthropic</option>
+                            <option value="Google">Google</option>
+                            <option value="Meta AI">Meta AI</option>
+                            <option value="Microsoft">Microsoft</option>
+                            <option value="academia">Academia</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-tag">Topic</label>
+                        <select id="filter-tag" class="filter-select">
+                            <option value="all">All Topics</option>
+                            <option value="Transformers">Transformers</option>
+                            <option value="Attention">Attention Mechanisms</option>
+                            <option value="Architecture">Architecture Design</option>
+                            <option value="Generative">Generative Models</option>
+                            <option value="Multimodal">Multimodal Models</option>
+                            <option value="Scaling">Scaling Laws</option>
+                            <option value="Efficiency">Model Efficiency</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-sort">Sort By</label>
+                        <select id="filter-sort" class="filter-select">
+                            <option value="recent">Most Recent</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="cited">Most Cited</option>
+                            <option value="influential">Most Influential</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="clear-filters" class="btn btn-outline btn-sm">Clear Filters</button>
+            </div>
+            
+            <div class="filter-summary">
+                <div id="results-count" class="results-count">Showing <span>2</span> papers</div>
+                <div id="active-filters" class="active-filters">
+                    <!-- Active filters will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paper list section -->
+    <section class="paper-list-section">
+        <div class="container">
+            <div class="paper-list">
+                <!-- Transformer Paper -->
+                <div class="paper-list-item" data-year="2017" data-org="Google" data-tags="Transformers,Attention,NLP">
+                    <div class="paper-list-content">
+                        <div class="paper-list-header">
+                            <div class="paper-meta-top">
+                                <span class="paper-year">2017</span>
+                                <span class="paper-org">Google</span>
+                                <span class="paper-citation-count">48,000+ citations</span>
+                            </div>
+                            <h3 class="paper-list-title">Attention Is All You Need</h3>
+                            <p class="paper-list-authors">Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin</p>
+                        </div>
+                        
+                        <div class="paper-list-body">
+                            <p class="paper-list-abstract">The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.</p>
+                            
+                            <div class="paper-list-tags">
+                                <span class="tag">Transformers</span>
+                                <span class="tag">Attention</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                        </div>
+                        
+                        <div class="paper-list-footer">
+                            <div class="paper-links">
+                                <a href="#" class="paper-link-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Original Paper
+                                </a>
+                                <a href="#" class="paper-link-btn paper-review-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Read Review
+                                </a>
+                            </div>
+                            
+                            <div class="paper-attributes">
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Seminal Paper</span>
+                                </div>
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>98% Approval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GPT-3 Paper -->
+                <div class="paper-list-item" data-year="2020" data-org="OpenAI" data-tags="Transformers,Scaling,NLP,Generative">
+                    <div class="paper-list-content">
+                        <div class="paper-list-header">
+                            <div class="paper-meta-top">
+                                <span class="paper-year">2020</span>
+                                <span class="paper-org">OpenAI</span>
+                                <span class="paper-citation-count">9,800+ citations</span>
+                            </div>
+                            <h3 class="paper-list-title">Language Models are Few-Shot Learners</h3>
+                            <p class="paper-list-authors">Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, et al.</p>
+                        </div>
+                        
+                        <div class="paper-list-body">
+                            <p class="paper-list-abstract">We demonstrate that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even becoming competitive with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, and test its performance in the few-shot setting.</p>
+                            
+                            <div class="paper-list-tags">
+                                <span class="tag">Transformers</span>
+                                <span class="tag">Scaling</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Generative</span>
+                            </div>
+                        </div>
+                        
+                        <div class="paper-list-footer">
+                            <div class="paper-links">
+                                <a href="#" class="paper-link-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Original Paper
+                                </a>
+                                <a href="#" class="paper-link-btn paper-review-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Read Review
+                                </a>
+                            </div>
+                            
+                            <div class="paper-attributes">
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Breakthrough</span>
+                                </div>
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>95% Approval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BERT Paper -->
+                <div class="paper-list-item" data-year="2018" data-org="Google" data-tags="Transformers,NLP,Architecture">
+                    <div class="paper-list-content">
+                        <div class="paper-list-header">
+                            <div class="paper-meta-top">
+                                <span class="paper-year">2018</span>
+                                <span class="paper-org">Google</span>
+                                <span class="paper-citation-count">67,000+ citations</span>
+                            </div>
+                            <h3 class="paper-list-title">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</h3>
+                            <p class="paper-list-authors">Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova</p>
+                        </div>
+                        
+                        <div class="paper-list-body">
+                            <p class="paper-list-abstract">We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.</p>
+                            
+                            <div class="paper-list-tags">
+                                <span class="tag">Transformers</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Architecture</span>
+                            </div>
+                        </div>
+                        
+                        <div class="paper-list-footer">
+                            <div class="paper-links">
+                                <a href="#" class="paper-link-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Original Paper
+                                </a>
+                                <a href="#" class="paper-link-btn paper-review-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Read Review
+                                </a>
+                            </div>
+                            
+                            <div class="paper-attributes">
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Industry Standard</span>
+                                </div>
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>97% Approval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision Transformer -->
+                <div class="paper-list-item" data-year="2020" data-org="Google" data-tags="Transformers,Vision,Architecture">
+                    <div class="paper-list-content">
+                        <div class="paper-list-header">
+                            <div class="paper-meta-top">
+                                <span class="paper-year">2020</span>
+                                <span class="paper-org">Google</span>
+                                <span class="paper-citation-count">22,000+ citations</span>
+                            </div>
+                            <h3 class="paper-list-title">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</h3>
+                            <p class="paper-list-authors">Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby</p>
+                        </div>
+                        
+                        <div class="paper-list-body">
+                            <p class="paper-list-abstract">While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks.</p>
+                            
+                            <div class="paper-list-tags">
+                                <span class="tag">Transformers</span>
+                                <span class="tag">Vision</span>
+                                <span class="tag">Architecture</span>
+                            </div>
+                        </div>
+                        
+                        <div class="paper-list-footer">
+                            <div class="paper-links">
+                                <a href="#" class="paper-link-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Original Paper
+                                </a>
+                                <a href="#" class="paper-link-btn paper-review-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Read Review
+                                </a>
+                            </div>
+                            
+                            <div class="paper-attributes">
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Paradigm Shift</span>
+                                </div>
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>96% Approval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Claude Paper -->
+                <div class="paper-list-item" data-year="2022" data-org="Anthropic" data-tags="Transformers,Alignment,Scaling">
+                    <div class="paper-list-content">
+                        <div class="paper-list-header">
+                            <div class="paper-meta-top">
+                                <span class="paper-year">2022</span>
+                                <span class="paper-org">Anthropic</span>
+                                <span class="paper-citation-count">2,300+ citations</span>
+                            </div>
+                            <h3 class="paper-list-title">Training language models to follow instructions with human feedback</h3>
+                            <p class="paper-list-authors">Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, Ryan Lowe</p>
+                        </div>
+                        
+                        <div class="paper-list-body">
+                            <p class="paper-list-abstract">We show that fine-tuning language models on a relatively modest collection of human demonstrations and preferences enables them to follow natural language instructions substantially better than much larger models trained only with (next-token) supervised learning. We call the resulting models InstructGPT and find that they are much better at following instructions, less toxic, and less likely to produce false or misleading information.</p>
+                            
+                            <div class="paper-list-tags">
+                                <span class="tag">Transformers</span>
+                                <span class="tag">Alignment</span>
+                                <span class="tag">Scaling</span>
+                            </div>
+                        </div>
+                        
+                        <div class="paper-list-footer">
+                            <div class="paper-links">
+                                <a href="#" class="paper-link-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Original Paper
+                                </a>
+                                <a href="#" class="paper-link-btn paper-review-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Read Review
+                                </a>
+                            </div>
+                            
+                            <div class="paper-attributes">
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Alignment Innovation</span>
+                                </div>
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>98% Approval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more papers here with similar structure -->
+                <!-- FAN Paper -->
+                <div class="paper-list-item" data-year="2024" data-org="Academy" data-tags="Architecture,Transformers,Efficiency">
+                    <div class="paper-list-content">
+                        <div class="paper-list-header">
+                            <div class="paper-meta-top">
+                                <span class="paper-year">2024</span>
+                                <span class="paper-org">Peking University, HKUST, ByteDance</span>
+                                <span class="paper-citation-count">250+ citations</span>
+                            </div>
+                            <h3 class="paper-list-title">FAN: Fourier Analysis Networks</h3>
+                            <p class="paper-list-authors">Yihong Dong, Ge Li, Yongding Tao, Xue Jiang, Kechi Zhang, Jia Li, Jinliang Deng, Jing Su, Jun Zhang, Jingjing Xu</p>
+                        </div>
+                        
+                        <div class="paper-list-body">
+                            <p class="paper-list-abstract">We introduce Fourier Analysis Networks (FAN), a novel architecture that leverages frequency domain analysis for efficient sequence modeling. By decomposing input sequences into frequency components, FAN enables more efficient computation while maintaining or improving performance compared to traditional transformer models, offering improved efficiency particularly for long sequences.</p>
+                            
+                            <div class="paper-list-tags">
+                                <span class="tag">Architecture</span>
+                                <span class="tag">Transformers</span>
+                                <span class="tag">Efficiency</span>
+                            </div>
+                        </div>
+                        
+                        <div class="paper-list-footer">
+                            <div class="paper-links">
+                                <a href="#" class="paper-link-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Original Paper
+                                </a>
+                                <a href="#" class="paper-link-btn paper-review-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Read Review
+                                </a>
+                            </div>
+                            
+                            <div class="paper-attributes">
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Rising Star</span>
+                                </div>
+                                <div class="paper-attribute">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>92% Approval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn pagination-prev">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Previous
+                </button>
+                <div class="pagination-pages">
+                    <button class="pagination-page active">1</button>
+                    <button class="pagination-page">2</button>
+                    <button class="pagination-page">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-page">10</button>
+                </div>
+                <button class="pagination-btn pagination-next">
+                    Next
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-info">
+                    <span class="section-eyebrow">Stay Updated</span>
+                    <h2 class="section-title">Subscribe to Paper Updates</h2>
+                    <p class="newsletter-description">
+                        Join our research community to receive the latest paper reviews and insights delivered directly to your inbox. We send a curated selection of important research developments every month.
+                    </p>
+                </div>
+                
+                <div class="newsletter-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email" class="form-input" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <p class="form-disclaimer">
+                            You can unsubscribe at any time. Read our <a href="#">Privacy Policy</a>.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#F4F0FF"/>
+                            <path d="M20 8L32 14.5V27.5L20 34L8 27.5V14.5L20 8Z" stroke="#6E56CF" stroke-width="2"/>
+                            <path d="M20 21V34M20 8V21M8 14.5L20 21L32 14.5" stroke="#6E56CF" stroke-width="2"/>
+                            <circle cx="20" cy="21" r="3" fill="#6E56CF"/>
+                        </svg>
+                        <span class="logo-text">Paper Reviews</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Illuminating research in AI and robotics through comprehensive paper reviews.
+                    </p>
+                </div>
+                
+                <div class="footer-nav">
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Navigation</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#categories">Categories</a></li>
+                            <li><a href="index.html#featured">Featured</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="fundamental-networks.html" class="active-footer-link">Fundamental Networks</a></li>
+                            <li><a href="#">Racing</a></li>
+                            <li><a href="#">Reinforcement Learning</a></li>
+                            <li><a href="#">Robotics</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Connect</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 Paper Reviews. All rights reserved. Unauthorized reproduction or distribution of any materials on this site is strictly prohibited. <br>
+                    All content on this website is the intellectual property of Bruno Lee. For inquiries, please contact: <a href="mailto:brunoleej@gmail.com">brunoleej@gmail.com</a>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/paper-list.js"></script>
+</body>
+</html>
