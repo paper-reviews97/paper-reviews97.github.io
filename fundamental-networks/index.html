@@ -35,8 +35,8 @@
                 
                 <nav class="nav">
                     <ul class="nav-links">
-                        <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="index.html#categories" class="nav-link active">Categories</a></li>
+                        <li><a href="https://paper-reviews97.github.io" class="nav-link">Home</a></li>
+                        <!-- <li><a href="index.html#categories" class="nav-link active">Categories</a></li> -->
                         <li><a href="index.html#featured" class="nav-link">Featured</a></li>
                         <li><a href="index.html#about" class="nav-link">About</a></li>
                     </ul>
@@ -61,9 +61,9 @@
                 </div>
                 <div class="category-header-text">
                     <div class="breadcrumb">
-                        <a href="index.html">Home</a>
+                        <a href="https://paper-reviews97.github.io">Home</a>
                         <span class="breadcrumb-separator">/</span>
-                        <a href="index.html#categories">Categories</a>
+                        <a href="https://paper-reviews97.github.io/#categories">Categories</a>
                         <span class="breadcrumb-separator">/</span>
                         <span class="breadcrumb-current">Fundamental Networks</span>
                     </div>
@@ -103,16 +103,16 @@
                     </div>
                     
                     <div class="filter-group">
-                        <label for="filter-org">Organization</label>
+                        <label for="filter-org">Publication</label>
                         <select id="filter-org" class="filter-select">
-                            <option value="all">All Organizations</option>
-                            <option value="DeepMind">DeepMind</option>
-                            <option value="OpenAI">OpenAI</option>
-                            <option value="Anthropic">Anthropic</option>
-                            <option value="Google">Google</option>
-                            <option value="Meta AI">Meta AI</option>
-                            <option value="Microsoft">Microsoft</option>
-                            <option value="academia">Academia</option>
+                            <option value="all">All Publications</option>
+                            <option value="arXiv">arXiv</option>
+                            <option value="NeurIPS">NeurIPS</option>
+                            <!-- <option value="Anthropic">Anthropic</option> -->
+                            <!-- <option value="Google">Google</option> -->
+                            <!-- <option value="Meta AI">Meta AI</option> -->
+                            <!-- <option value="Microsoft">Microsoft</option> -->
+                            <!-- <option value="academia">Academia</option> -->
                         </select>
                     </div>
                     
@@ -158,7 +158,7 @@
         <div class="container">
             <div class="paper-list">
                 <!-- Transformer Paper -->
-                <div class="paper-list-item" data-year="2017" data-org="Google" data-tags="Transformers,Attention,NLP">
+                <!-- <div class="paper-list-item" data-year="2017" data-org="Google" data-tags="Transformers,Attention,NLP">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
@@ -215,10 +215,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- GPT-3 Paper -->
-                <div class="paper-list-item" data-year="2020" data-org="OpenAI" data-tags="Transformers,Scaling,NLP,Generative">
+                <!-- <div class="paper-list-item" data-year="2020" data-org="OpenAI" data-tags="Transformers,Scaling,NLP,Generative">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
@@ -276,10 +276,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- BERT Paper -->
-                <div class="paper-list-item" data-year="2018" data-org="Google" data-tags="Transformers,NLP,Architecture">
+                <!-- <div class="paper-list-item" data-year="2018" data-org="Google" data-tags="Transformers,NLP,Architecture">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
@@ -336,34 +336,32 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Vision Transformer -->
-                <div class="paper-list-item" data-year="2020" data-org="Google" data-tags="Transformers,Vision,Architecture">
+                <div class="paper-list-item" data-year="2024" data-org="arXiv" data-tags="XNet">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
-                                <span class="paper-year">2020</span>
-                                <span class="paper-org">Google</span>
-                                <span class="paper-citation-count">22,000+ citations</span>
+                                <span class="paper-year">2024</span>
+                                <span class="paper-org">arXiv</span>
+                                <span class="paper-citation-count">4+ citations</span>
                             </div>
-                            <h3 class="paper-list-title">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</h3>
-                            <p class="paper-list-authors">Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby</p>
+                            <h3 class="paper-list-title">Model Comparisons: XNet Outperforms KAN</h3>
+                            <p class="paper-list-authors">Xin Li, Zhihong Jeff Xia, Xiaotao Zheng</p>
                         </div>
                         
                         <div class="paper-list-body">
-                            <p class="paper-list-abstract">While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks.</p>
+                            <p class="paper-list-abstract">In the fields of computational mathematics and artificial intelligence, the need for precise data modeling is crucial, especially for predictive machine learning tasks. This paper explores further XNet, a novel algorithm that employs the complex-valued Cauchy integral formula, offering a superior network architecture that surpasses traditional Multi-Layer Perceptrons (MLPs) and Kolmogorov-Arnold Networks (KANs). XNet significant improves speed and accuracy across various tasks in both low and high-dimensional spaces, redefining the scope of data-driven model development and providing substantial improvements over established time series models like LSTMs.</p>
                             
                             <div class="paper-list-tags">
-                                <span class="tag">Transformers</span>
-                                <span class="tag">Vision</span>
-                                <span class="tag">Architecture</span>
+                                <span class="tag">XNet</span>
                             </div>
                         </div>
                         
                         <div class="paper-list-footer">
                             <div class="paper-links">
-                                <a href="#" class="paper-link-btn">
+                                <a href="https://arxiv.org/abs/2410.02033" class="paper-link-btn">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -398,32 +396,31 @@
                     </div>
                 </div>
 
-                <!-- Claude Paper -->
-                <div class="paper-list-item" data-year="2022" data-org="Anthropic" data-tags="Transformers,Alignment,Scaling">
+                <!-- KAN Paper -->
+                <div class="paper-list-item" data-year="2025" data-org="NeurIPS" data-tags="KAN,Kolmogrov-Arnold representation theorem">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
-                                <span class="paper-year">2022</span>
-                                <span class="paper-org">Anthropic</span>
-                                <span class="paper-citation-count">2,300+ citations</span>
+                                <span class="paper-year">2025</span>
+                                <span class="paper-org">NeurIPS (Oral)</span>
+                                <span class="paper-citation-count">964+ citations</span>
                             </div>
-                            <h3 class="paper-list-title">Training language models to follow instructions with human feedback</h3>
-                            <p class="paper-list-authors">Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, Ryan Lowe</p>
+                            <h3 class="paper-list-title">KAN: Kolmogorov-Arnold Networks</h3>
+                            <p class="paper-list-authors">Ziming Liu, Yixuan Wang, Sachin Vaidya, Fabian Ruehle, James Halverson, Marin Soljačić, Thomas Y. Hou, Max Tegmark</p>
                         </div>
                         
                         <div class="paper-list-body">
-                            <p class="paper-list-abstract">We show that fine-tuning language models on a relatively modest collection of human demonstrations and preferences enables them to follow natural language instructions substantially better than much larger models trained only with (next-token) supervised learning. We call the resulting models InstructGPT and find that they are much better at following instructions, less toxic, and less likely to produce false or misleading information.</p>
+                            <p class="paper-list-abstract">Inspired by the Kolmogorov-Arnold representation theorem, we propose Kolmogorov-Arnold Networks (KANs) as promising alternatives to Multi-Layer Perceptrons (MLPs). While MLPs have fixed activation functions on nodes ("neurons"), KANs have learnable activation functions on edges ("weights"). KANs have no linear weights at all -- every weight parameter is replaced by a univariate function parametrized as a spline. We show that this seemingly simple change makes KANs outperform MLPs in terms of accuracy and interpretability. For accuracy, much smaller KANs can achieve comparable or better accuracy than much larger MLPs in data fitting and PDE solving. Theoretically and empirically, KANs possess faster neural scaling laws than MLPs. For interpretability, KANs can be intuitively visualized and can easily interact with human users. Through two examples in mathematics and physics, KANs are shown to be useful collaborators helping scientists (re)discover mathematical and physical laws. In summary, KANs are promising alternatives for MLPs, opening opportunities for further improving today's deep learning models which rely heavily on MLPs.</p>
                             
                             <div class="paper-list-tags">
-                                <span class="tag">Transformers</span>
-                                <span class="tag">Alignment</span>
-                                <span class="tag">Scaling</span>
+                                <span class="tag">KAN</span>
+                                <span class="tag">Kolmogrov-Arnold representation theorem</span>
                             </div>
                         </div>
                         
                         <div class="paper-list-footer">
                             <div class="paper-links">
-                                <a href="#" class="paper-link-btn">
+                                <a href="https://arxiv.org/abs/2404.19756" class="paper-link-btn">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -460,13 +457,13 @@
 
                 <!-- Add more papers here with similar structure -->
                 <!-- FAN Paper -->
-                <div class="paper-list-item" data-year="2024" data-org="Academy" data-tags="Architecture,Transformers,Efficiency">
+                <div class="paper-list-item" data-year="2024" data-org="arXiv" data-tags="Architecture,Transformers,Efficiency">
                     <div class="paper-list-content">
                         <div class="paper-list-header">
                             <div class="paper-meta-top">
                                 <span class="paper-year">2024</span>
-                                <span class="paper-org">Peking University, HKUST, ByteDance</span>
-                                <span class="paper-citation-count">250+ citations</span>
+                                <span class="paper-org">arXiv</span>
+                                <span class="paper-citation-count">3+ citations</span>
                             </div>
                             <h3 class="paper-list-title">FAN: Fourier Analysis Networks</h3>
                             <p class="paper-list-authors">Yihong Dong, Ge Li, Yongding Tao, Xue Jiang, Kechi Zhang, Jia Li, Jinliang Deng, Jing Su, Jun Zhang, Jingjing Xu</p>
@@ -476,15 +473,16 @@
                             <p class="paper-list-abstract">We introduce Fourier Analysis Networks (FAN), a novel architecture that leverages frequency domain analysis for efficient sequence modeling. By decomposing input sequences into frequency components, FAN enables more efficient computation while maintaining or improving performance compared to traditional transformer models, offering improved efficiency particularly for long sequences.</p>
                             
                             <div class="paper-list-tags">
-                                <span class="tag">Architecture</span>
-                                <span class="tag">Transformers</span>
-                                <span class="tag">Efficiency</span>
+                                <span class="tag">FAN</span>
+                                <span class="tag">Fourier Analysis</span>
+                                <!-- <span class="tag">Transformers</span> -->
+                                <!-- <span class="tag">Efficiency</span> -->
                             </div>
                         </div>
                         
                         <div class="paper-list-footer">
                             <div class="paper-links">
-                                <a href="#" class="paper-link-btn">
+                                <a href="https://arxiv.org/abs/2410.02675" class="paper-link-btn">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -567,10 +565,10 @@
                     <div class="footer-nav-group">
                         <h4 class="footer-heading">Navigation</h4>
                         <ul class="footer-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="index.html#categories">Categories</a></li>
+                            <li><a href="https://paper-reviews97.github.io">Home</a></li>
+                            <li><a href="https://paper-reviews97.github.io/#categories">Categories</a></li>
                             <li><a href="index.html#featured">Featured</a></li>
-                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="https://leejisue.github.io/">About</a></li>
                         </ul>
                     </div>
                     
