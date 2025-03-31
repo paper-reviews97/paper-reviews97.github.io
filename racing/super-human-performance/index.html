@@ -275,15 +275,14 @@
                                 <li>Two Q-networks: Estimate value of actions</li>
                                 <li>One value network: Helps stabilize training</li>
                             </ul>
-                            
 
                             <p><strong>🎯 Step 5: Real-Time Simulation and Training</strong></p>
                             <p>The magic happens on four PlayStation 4 consoles, each running 20 cars in parallel in the GTS environment. The AI collects real driving experiences (observations, actions, rewards), stores them in a replay buffer, and samples from this buffer to update its policy.</p>
                             <p>Training occurs in real-time, constrained by the PS4 hardware and simulator frame rate (10 Hz during training, 60 Hz during evaluation). This is no synthetic setup—it’s close to how an AI would need to operate in a real-world autonomous racing system.</p>
                             
                             <figure class="review-figure">
-                                <img src="https://github.com/user-attachments/assets/1f2fdcab-9c5b-4877-828e-f6000865a340" alt="method1" class="image-medium">
-                                <figcaption>Figure 1.</figcaption>
+                                <img src="https://i.imgur.com/Y6uSNQV.png" alt="method1" style="display: block; margin: 0 auto; width: 100%; max-width: 800px;" class="image-medium">
+                                <figcaption>Figure 1. Overview of the training pipeline: A distributed system collects data from 4 PlayStation 4 consoles running GTS simulations, with extracted features sent via the Gran Turismo API to a policy network. The policy is trained using Soft Actor-Critic (SAC) on a desktop PC, leveraging a replay buffer and mini-batch updates in parallel.</figcaption>
                             </figure>
 
                         </div>
@@ -294,7 +293,7 @@
                         <h2 class="review-section-title">Results</h2>
                         <div class="review-section-content">
                             <figure class="review-figure">
-                                <img src="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/racing/super-human-performance/img/results1.png" alt="results1" class="image-medium">
+                                <img src="https://i.imgur.com/rbj8K5I.png" alt="results1" class="image-medium">
                                 <figcaption>Figure 2. The tracks and cars used as reference settings to compare our approach
                                     to human drivers.</figcaption>
                             </figure>
@@ -307,7 +306,7 @@
                             <p>The policy mimics professional driving behavior such as out-in-out cornering, anticipatory braking, and maximized exit speeds. Variance in lap time was significantly lower than that of expert humans, suggesting high consistency. Robustness tests under observation noise and inference delay show graceful degradation, maintaining top-tier performance up to 50 ms delay and 9% observation noise.</p>
                             
                             <figure class="review-figure">
-                                <img src="https://github.com/user-attachments/assets/6368156d-b6d6-4a3a-8224-3785254023b1" alt="result-table1" class="image-large">
+                                <img src="./img/result2.svg" alt="result-table1" style="display: block; margin: 0 auto; width: 100%; max-width: 1200px" class="image-large">
                                 <figcaption>Table 1. Time Trial Comparisons Between our Approach, Human Online Competitors, and the Built-in GTS AI for the 3 Race Settings.</figcaption>
                             </figure>
 
