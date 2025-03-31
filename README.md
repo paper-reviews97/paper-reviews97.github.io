@@ -1,5 +1,5 @@
 # Paper Reviews – Curated AI Research Digest
-<img src="[https://example.com/images/neural_net.png](https://i.imgur.com/yKH4jtQ.png)" alt="Neural Network" width="400"/>
+<img src="https://i.imgur.com/yKH4jtQ.png" alt="Neural Network" width="400"/>
 Welcome to **Paper Reviews**, a web-based platform designed to provide curated, accessible, and insightful reviews of the latest and most impactful research papers in Artificial Intelligence (AI), Machine Learning (ML), and Robotics. Whether you’re a student, researcher, or practitioner, this site is your go-to archive for staying current with frontier advancements in AI.
 
 ## 🌐 Website Overview
