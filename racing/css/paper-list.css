@@ -417,6 +417,49 @@
     color: var(--gray);
 }
 
+
+/* figure 요소 사용을 위한 CSS */
+figure.review-figure {
+    margin: var(--spacing-xl) 0;
+    width: 100%;
+    display: block;
+}
+
+figure.review-figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius-md);
+    margin-left: auto;  /* 추가: 가운데 정렬을 위한 설정 */
+    margin-right: auto; /* 추가: 가운데 정렬을 위한 설정 */
+}
+
+figure.review-figure img.image-medium {
+    max-width: 600px;
+    width: auto; /* 추가: 원본 비율 유지 */
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+figure.review-figure figcaption {
+    font-size: var(--font-size-sm);
+    color: var(--gray);
+    text-align: center;
+    font-style: italic;
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm) 0;
+}
+
+.review-section-content {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* 추가: 넘치는 콘텐츠 숨기기 */
+}
+
+
 /* ========== RESPONSIVE STYLES ========== */
 @media (max-width: 1024px) {
     .category-header-content {

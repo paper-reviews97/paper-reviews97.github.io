@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deep dive analysis of 'Super-Human Performance in Gran Turismo Sports Using Deep Reinforcement Learning' - Research paper review">
+    <title>Paper Review - Super-Human Performance in Gran Turismo</title>
+    <link rel="stylesheet" href="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/racing/super-human-performance/css/styles.css">
+    <link rel="stylesheet" href="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/racing/super-human-performance/css/paper-review.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <div class="header-sensor"></div>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#F4F0FF"/>
+                        <path d="M20 8L32 14.5V27.5L20 34L8 27.5V14.5L20 8Z" stroke="#6E56CF" stroke-width="2"/>
+                        <path d="M20 21V34M20 8V21M8 14.5L20 21L32 14.5" stroke="#6E56CF" stroke-width="2"/>
+                        <circle cx="20" cy="21" r="3" fill="#6E56CF"/>
+                    </svg>
+                    <h1 class="logo-text">Paper Reviews</h1>
+                </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="https://paper-reviews97.github.io" class="nav-link">Home</a></li>
+                        <li><a href="https://paper-reviews97.github.io#categories" class="nav-link">Categories</a></li>
+                        <li><a href="https://paper-reviews97.github.io#featured" class="nav-link">Featured</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="#" class="btn btn-primary">Subscribe</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Paper header -->
+    <section class="paper-header">
+        <div class="container">
+            <div class="paper-header-content">
+                <div class="breadcrumb">
+                    <a href="./../../">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="./../../index.html#categories">Categories</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="/">Racing</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Super-Human Performance in Gran Turismo</span>
+                </div>
+                
+                <div class="paper-metadata">
+                    <div class="paper-category-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Racing</span>
+                    </div>
+                    <span class="paper-year">2021</span>
+                    <span class="paper-journal">RA-L</span>
+                    <span class="paper-citation-count">67+ citations</span>
+                </div>
+                
+                <h1 class="paper-title">Super-Human Performance in Gran Turismo Sports Using Deep Reinforcement Learning</h1>
+                <p class="paper-authors">Florian Fuchs, Yunlong Song, Elia Kaufmann, Davide Scaramuzza, Peter Duerr</p>
+                
+                <div class="paper-link-buttons">
+                    <a href="https://arxiv.org/abs/2008.07971" class="btn btn-secondary" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Original Paper
+                    </a>
+                    <button class="btn btn-outline share-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.59 13.51L15.42 17.49" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.41 6.51L8.59 10.49" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Share Review
+                    </button>
+                </div>
+                
+                <div class="paper-highlights">
+                    <div class="highlight">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Innovation Level</span>
+                            <span class="highlight-value">Breakthrough</span>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Reviewer Rating</span>
+                            <span class="highlight-value">98% Approval</span>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Impact Factor</span>
+                            <span class="highlight-value">High</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video demonstration -->
+    <section class="video-section">
+        <div class="container">
+            <div class="review-card video-card">
+                <h2 class="review-section-title">Video</h2>
+                <div class="review-section-content">
+                    <div class="video-container">
+                        <iframe 
+                            width="100%" 
+                            height="500" 
+                            src="https://youtu.be/Zeyv1bN9v4A?si=r5NQ9pwN7tuXeVet" 
+                            title="Super-Human Performance in Gran Turismo Sports Using Deep Reinforcement Learning" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <!-- <p class="video-description">This video demonstrates the super-human performance of the RL agent in Gran Turismo Sport, showing how it outperforms human experts on multiple tracks.</p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review content -->
+    <section class="paper-review-content">
+        <div class="container">
+            <div class="review-layout">
+                <!-- Main content -->
+                <div class="review-main">
+                    <!-- Abstract card -->
+                    <div class="review-card abstract-card">
+                        <h2 class="review-section-title">Abstract</h2>
+                        <div class="review-section-content">
+                            <p>Autonomous racing presents formidable challenges such as minimizing lap times under uncertain dynamics and extreme vehicle control conditions. This paper introduces a deep reinforcement learning (RL) system applied within the Gran Turismo Sport (GTS) simulator, leveraging course-progress-based proxy rewards to overcome the sparsity of traditional lap-time objectives. Utilizing Soft Actor-Critic (SAC), the authors train a neural policy network that surpasses both the built-in AI and the best human lap times across multiple racing scenarios. The approach demonstrates generalization to changes in dynamics and track layout, highlighting the potential of model-free RL in high-performance autonomous driving applications.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Takeaways -->
+                    <div class="review-card">
+                        <h2 class="review-section-title">Key Takeaways</h2>
+                        <div class="review-section-content">
+                            <div class="takeaways-grid">
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">1</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Super-Human Performance with Deep RL</h3>
+                                        <p class="takeaway-description">The trained agent consistently outperforms the top 1% of human drivers and GTS built-in AI across three distinct racing scenarios using deep reinforcement learning.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">2</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Course-Progress Proxy Reward</h3>
+                                        <p class="takeaway-description">A continuous reward based on track centerline progress, along with kinetic-energy-scaled wall penalties, enables efficient training despite sparse overall lap-time rewards.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">3</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Realism and Practical Constraints</h3>
+                                        <p class="takeaway-description">The policy is trained on real-time, real-fidelity simulation using consumer-grade PlayStation 4 hardware, with observation constraints similar to those available to human drivers.</p>
+                                    </div>
+                                </div>
+
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">4</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Robust Generalization</h3>
+                                        <p class="takeaway-description">Without retraining, the agent maintains high performance under noise, inference delay, and moderate changes in track dynamics and car models.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review sections - Introduction -->
+                    <div class="review-card" id="introduction">
+                        <h2 class="review-section-title">Introduction</h2>
+                        <div class="review-section-content">
+                            <p>Autonomous racing entails precise high-speed control and trajectory generation under dynamic and uncertain conditions. Traditional planning and control methods, while effective, suffer from scalability and flexibility issues. This paper pioneers the use of deep reinforcement learning in the GTS simulator a platform used for professional driver scouting—to develop an agent capable of not only competing with but outperforming expert human drivers. The authors circumvent common RL challenges in sparse-reward environments by introducing a carefully constructed proxy reward system and applying the SAC algorithm for policy training.</p>
+                            <p>Prior studies in the autonomous racing can be grouped into three categories:</p>
+                            <ul>
+                                <li><strong>Trajectory planning and following</strong>: Model Predictive Control (MPC), Model Predictive Path Integral control (MPPI)</li>
+                                <li><strong>Supervised learning</strong>: Imitation Learning (IL), Autonomous Land Vehicle in a Neural Network (ALVINN), Convolutional Neural Network (CNN) controller</li>
+                                <li><strong>Reinforcement learning</strong>: Soft-Actor-Critic (SAC)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Methodology -->
+                    <div class="review-card" id="methodology">
+                        <h2 class="review-section-title">Methodology</h2>
+                        <div class="review-section-content">
+                            <p><Strong>🎯 Step 1. Designing the Reward Function</Strong></p>
+                            <p>Create a proxy reward that approximates lap time by evaluating how much progress the car makes along the track's centerline in small intervals. This gives a dense feedback signal, helping the agent learn more effectively.</p>
+                            
+                            <p>But here’s the twist: fast driving often means flirting with the edge of control. To prevent the AI from simply bouncing off track walls (a cheap but effective strategy), the reward includes a penalty for wall contact, scaled by the car’s kinetic energy. The final reward at each timestep \(t\) is:</p>
+                            
+                            <p>\[r_t = r^{\text{prog}}_t - \begin{cases}
+                                c_w |\mathbf{v}_t|^2 & \text{if wall contact} \
+                                0 & \text{otherwise}
+                                \end{cases}\]</p>
+
+                            <p>This encourages the agent to be fast and smooth just like a real racing pro.</p>
+                            
+                            <p><strong>🎯 Step 2: Representing the Car’s World</strong></p>
+                            <p>To make smart decisions, the AI needs to “see” its environment. But it doesn’t get pixels or radar scans—it uses structured game state data similar to what a human might infer visually:</p>
+                            <ul>
+                                <li>Velocity & Acceleration \((\vec{v}_t, \dot{\vec{v}}_t)\)</li>
+                                <li>Heading angle relative to the centerline</li>
+                                <li>Rangefinder distances in 180° front arc (think of LIDAR for edges)</li>
+                                <li>Previous steering action</li>
+                                <li>Wall contact flag</li>
+                                <li>Upcoming track curvature</li>
+                            </ul>
+                            <p>These features are concatenated into a single observation vector \(s_t\), which serves as input to the neural network.</p>
+
+                            <p><strong>🎯 Step 3: Defining the Action Space</strong></p>
+                            <p>Instead of separate throttle and brake controls, the authors simplify things with a single combined throttle/brake command \((\omega_t)\), alongside a steering angle \((\delta_t)\). This reflects the observation that top human drivers rarely brake and accelerate simultaneously.</p>
+                            <ul>
+                                <li>\(\delta_t \in [-\frac{\pi}{6}, \frac{\pi}{6}]\) radians</li>
+                                <li>\(\omega_t \in [-1, 1]\), where -1 = full brake, 1 = full throttle</li>
+                            </ul>
+
+                            <p><strong>🎯 Step 4: Training the Neural Network (Policy)</strong></p>
+                            <p>The policy is trained using the Soft Actor-Critic (SAC) algorithm, a state-of-the-art model-free RL method known for stable and sample-efficient learning.</p>
+                            <p>The architecture includes:</p>
+                            <ul>
+                                <li>Policy network: Outputs steering and throttle/brake</li>
+                                <li>Two Q-networks: Estimate value of actions</li>
+                                <li>One value network: Helps stabilize training</li>
+                            </ul>
+                            
+
+                            <p><strong>🎯 Step 5: Real-Time Simulation and Training</strong></p>
+                            <p>The magic happens on four PlayStation 4 consoles, each running 20 cars in parallel in the GTS environment. The AI collects real driving experiences (observations, actions, rewards), stores them in a replay buffer, and samples from this buffer to update its policy.</p>
+                            <p>Training occurs in real-time, constrained by the PS4 hardware and simulator frame rate (10 Hz during training, 60 Hz during evaluation). This is no synthetic setup—it’s close to how an AI would need to operate in a real-world autonomous racing system.</p>
+                            
+                            <figure class="review-figure">
+                                <img src="https://github.com/user-attachments/assets/1f2fdcab-9c5b-4877-828e-f6000865a340" alt="method1" class="image-medium">
+                                <figcaption>Figure 1.</figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="review-card" id="results">
+                        <h2 class="review-section-title">Results</h2>
+                        <div class="review-section-content">
+                            <figure class="review-figure">
+                                <img src="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/racing/super-human-performance/img/results1.png" alt="results1" class="image-medium">
+                                <figcaption>Figure 2. The tracks and cars used as reference settings to compare our approach
+                                    to human drivers.</figcaption>
+                            </figure>
+
+                            <p>The learned policy achieved lap times faster than the best human players in all three race settings:</p>
+                                <li>Setting A (Audi TT Cup, Track A): 0.15 seconds faster</li>
+                                <li>Setting B (Mazda Demio, Track A): 0.04 seconds faster</li>
+                                <li>Setting C (Audi TT Cup, Track C): 0.62 seconds faster</li>
+                            
+                            <p>The policy mimics professional driving behavior such as out-in-out cornering, anticipatory braking, and maximized exit speeds. Variance in lap time was significantly lower than that of expert humans, suggesting high consistency. Robustness tests under observation noise and inference delay show graceful degradation, maintaining top-tier performance up to 50 ms delay and 9% observation noise.</p>
+                            
+                            <figure class="review-figure">
+                                <img src="https://github.com/user-attachments/assets/6368156d-b6d6-4a3a-8224-3785254023b1" alt="result-table1" class="image-large">
+                                <figcaption>Table 1. Time Trial Comparisons Between our Approach, Human Online Competitors, and the Built-in GTS AI for the 3 Race Settings.</figcaption>
+                            </figure>
+
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Discussion -->
+                    <div class="review-card" id="discussion">
+                        <h2 class="review-section-title">Discussion</h2>
+                        <div class="review-section-content">
+                            <p>The paper convincingly demonstrates that end-to-end model-free RL can match and exceed human capabilities in high-speed racing. The approach’s strength lies in its simplicity and adaptability, eliminating the need for handcrafted cost functions or model-based control. Limitations include narrow generalization across unseen cars/tracks and lack of multi-agent interaction. Future work could explore meta-learning and policy distillation for broader applicability and competitive racing environments.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Conclusion -->
+                    <div class="review-card" id="conclusion">
+                        <h2 class="review-section-title">Conclusion</h2>
+                        <div class="review-section-content">
+                            <p>This work sets a new benchmark in autonomous racing by achieving super-human performance through a combination of realistic simulation, thoughtful reward design, and scalable RL training. It validates the potential of model-free deep reinforcement learning for real-world-like vehicle control and opens pathways for its application in broader autonomous driving contexts.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Reviewer notes -->
+                    <div class="review-card reviewer-notes">
+                        <h2 class="review-section-title">Reviewer Notes</h2>
+                        <div class="review-section-content">
+                            <!-- 요약 섹션 -->
+                            <div class="review-summary-section">
+                                <h3 class="summary-section-title">Key Points</h3>
+                                
+                                <div class="review-line">
+                                    <div class="line-number">1</div>
+                                    <div class="line-content">
+                                        <p>This paper introduces a deep RL framework that achieves super-human racing performance in Gran Turismo Sport.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="review-line">
+                                    <div class="line-number">2</div>
+                                    <div class="line-content">
+                                        <p>Using a novel reward function based on <strong>course progress</strong> and <strong>kinetic wall penalties</strong>, the SAC-trained policy matches expert-level driving behavior.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="review-line">
+                                    <div class="line-number">3</div>
+                                    <div class="line-content">
+                                        <p>The approach demonstrates strong robustness and realism, paving the way for future autonomous racing systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Gap 섹션 -->
+                            <div class="review-gap-section">
+                                <h3 class="gap-section-title">Extended Analysis</h3>
+                                
+                                <div class="gap-line">
+                                    <div class="line-number">1</div>
+                                    <div class="line-content">
+                                        <p>Generalization to unseen cars/tracks remains limited without retraining.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gap-line">
+                                    <div class="line-number">2</div>
+                                    <div class="line-content">
+                                        <p>Lack of interaction modeling (no multi-agent racing or obstacle avoidance).</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gap-line">
+                                    <div class="line-number">3</div>
+                                    <div class="line-content">
+                                        <p>Dependency on proprietary simulation environments may hinder reproducibility.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="review-sidebar">
+                    <!-- TOC -->
+                    <div class="sidebar-card toc-card">
+                        <h3 class="sidebar-title">Table of Contents</h3>
+                        <ul class="toc-list">
+                            <li><a href="#introduction" class="toc-link">Introduction</a></li>
+                            <li><a href="#methodology" class="toc-link">Methodology</a></li>
+                            <li><a href="#results" class="toc-link">Results</a></li>
+                            <li><a href="#discussion" class="toc-link">Discussion</a></li>
+                            <li><a href="#conclusion" class="toc-link">Conclusion</a></li>
+                            <li><a href="#references" class="toc-link">References</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Paper details -->
+                    <div class="sidebar-card details-card">
+                        <h3 class="sidebar-title">Paper Details</h3>
+                        <ul class="details-list">
+                            <li class="details-item">
+                                <span class="detail-label">Published:</span>
+                                <span class="detail-value">March 2021</span>
+                            </li>
+                            <li class="details-item">
+                                <span class="detail-label">Journal:</span>
+                                <span class="detail-value">IEEE Robotics and Automation Letters (RA-L)</span>
+                            </li>
+                            <li class="details-item">
+                                <span class="detail-label">Volume:</span>
+                                <span class="detail-value">6, Issue 3</span>
+                            </li>
+                            <li class="details-item">
+                                <span class="detail-label">DOI:</span>
+                                <span class="detail-value"><a href="
+                                    https://doi.org/10.1109/LRA.2021.3064284" target="_blank">10.1109/LRA.2021.3068942</a></span>
+                            </li>
+                            <li class="details-item">
+                                <span class="detail-label">Citations:</span>
+                                <span class="detail-value">67+</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Related papers -->
+                    <div class="sidebar-card related-card">
+                        <h3 class="sidebar-title">Related Papers</h3>
+                        <div class="related-papers">
+                            <a href="#" class="related-paper">
+                                <span class="related-paper-title">A Simulation Benchmark for Autonomous Racing with Large-Scale Human Data</span>
+                                <div class="related-paper-meta">
+                                    <span class="related-paper-authors">Remonda et al.</span>
+                                    <span class="related-paper-year">2024</span>
+                                </div>
+                            </a>
+                            <a href="#" class="related-paper">
+                                <span class="related-paper-title">Related paper placeholder 2</span>
+                                <div class="related-paper-meta">
+                                    <span class="related-paper-authors">Author et al.</span>
+                                    <span class="related-paper-year">2023</span>
+                                </div>
+                            </a>
+                            <a href="#" class="related-paper">
+                                <span class="related-paper-title">Related paper placeholder 3</span>
+                                <div class="related-paper-meta">
+                                    <span class="related-paper-authors">Author et al.</span>
+                                    <span class="related-paper-year">2022</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="sidebar-card tags-card">
+                        <h3 class="sidebar-title">Tags</h3>
+                        <div class="sidebar-tags">
+                            <a href="#" class="tag">Gran Turismo</a>
+                            <a href="#" class="tag">Reinforcement Learning</a>
+                            <a href="#" class="tag">Autonomous Racing</a>
+                            <a href="#" class="tag">Simulation</a>
+                            <a href="#" class="tag">RL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#F4F0FF"/>
+                            <path d="M20 8L32 14.5V27.5L20 34L8 27.5V14.5L20 8Z" stroke="#6E56CF" stroke-width="2"/>
+                            <path d="M20 21V34M20 8V21M8 14.5L20 21L32 14.5" stroke="#6E56CF" stroke-width="2"/>
+                            <circle cx="20" cy="21" r="3" fill="#6E56CF"/>
+                        </svg>
+                        <span class="logo-text">Paper Reviews</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Illuminating research in AI and robotics through comprehensive paper reviews.
+                    </p>
+                </div>
+                
+                <div class="footer-nav">
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Navigation</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://paper-reviews97.github.io">Home</a></li>
+                            <li><a href="https://paper-reviews97.github.io/#categories">Categories</a></li>
+                            <li><a href="https://paper-reviews97.github.io#featured">Featured</a></li>
+                            <li><a href="https://leejisue.github.io/">About</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://paper-reviews97.github.io/fundamental-networks/">Fundamental Networks</a></li>
+                            <li><a href="../index.html" class="active-footer-link">Racing</a></li>
+                            <li><a href="#">Reinforcement Learning</a></li>
+                            <li><a href="#">Robotics</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Connect</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="https://leejisue.github.io/">GitHub</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 Paper Reviews. All rights reserved. Unauthorized reproduction or distribution of any materials on this site is strictly prohibited. <br>
+                    All content on this website is the intellectual property of Bruno Lee. For inquiries, please contact: <a href="mailto:brunoleej@gmail.com">brunoleej@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/racing/super-human-performance/js/paper-review.js"></script>
+    <script src="/Users/ijisu/Desktop/Blog/paper-reviews97.github.io/racing/super-human-performance/js/paper-review.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
