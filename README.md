@@ -38,13 +38,9 @@ Each paper includes:
 - Tags for quick reference
 - Link to full review
 
----
-
 ## 📩 Subscription *(optional)*
 - Email subscription for monthly updates
 - Curated selection of recent research reviews
-
----
 
 ## 🗝 Navigation and Footer
 
@@ -62,8 +58,6 @@ Each paper includes:
 - Copyright:
   > ©2025 Paper Reviews. All content is the intellectual property of Bruno Lee. For inquiries, contact [brunoleej@gmail.com](mailto:brunoleej@gmail.com)
 
----
-
 ## 🛠️ Tech Stack
 
 | Component     | Description                                   |
@@ -74,14 +68,10 @@ Each paper includes:
 | JavaScript    | Interactivity (via /js/script.js)             |
 | Custom Styles | Central styling in /css/styles.css            |
 
----
-
 
 ## 📄 License
 
 All content is ©2025 Bruno Lee. Reproduction or redistribution is prohibited without explicit permission.
-
----
 
 ## 📨 Contact
 
