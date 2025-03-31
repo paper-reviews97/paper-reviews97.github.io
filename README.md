@@ -1,4 +1,5 @@
 # Paper Reviews – Curated AI Research Digest
+![title](blob:https://imgur.com/28e11c7d-5d28-4e24-b8ee-85cffcb81959)
 Welcome to **Paper Reviews**, a web-based platform designed to provide curated, accessible, and insightful reviews of the latest and most impactful research papers in Artificial Intelligence (AI), Machine Learning (ML), and Robotics. Whether you’re a student, researcher, or practitioner, this site is your go-to archive for staying current with frontier advancements in AI.
 
 ---
