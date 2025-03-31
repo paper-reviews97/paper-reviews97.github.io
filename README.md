@@ -41,22 +41,7 @@ Each paper includes:
 ## 📩 Subscription *(optional)*
 - Email subscription for monthly updates
 - Curated selection of recent research reviews
-
-## 🗝 Navigation and Footer
-
-### Navigation
-- Home
-- Categories
-- Featured
-- About
-
-### Footer
-- Tagline: "Illuminating research in AI and robotics through comprehensive paper reviews"
-- Quick links to categories
-- Socials: Twitter, GitHub, LinkedIn, Email
-- Legal: Privacy Policy, Terms of Service
-- Copyright:
-  - ©2025 Paper Reviews. All content is the intellectual property of Bruno Lee. For inquiries, contact [brunoleej@gmail.com](mailto:brunoleej@gmail.com)
+- ©2025 Paper Reviews. All content is the intellectual property of Bruno Lee. For inquiries, contact [brunoleej@gmail.com](mailto:brunoleej@gmail.com)
 
 ## 🛠️ Tech Stack
 
@@ -67,11 +52,6 @@ Each paper includes:
 | SVG Icons     | UI icons and branding                         |
 | JavaScript    | Interactivity (via /js/script.js)             |
 | Custom Styles | Central styling in /css/styles.css            |
-
-
-## 📄 License
-
-All content is ©2025 Bruno Lee. Reproduction or redistribution is prohibited without explicit permission.
 
 ## 📨 Contact
 
