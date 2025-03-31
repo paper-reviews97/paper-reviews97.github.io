@@ -40,11 +40,6 @@ Each paper includes:
 - Tags for quick reference
 - Link to full review
 
-## 📩 Subscription *(optional)*
-- Email subscription for monthly updates
-- Curated selection of recent research reviews
-- ©2025 Paper Reviews. All content is the intellectual property of Bruno Lee. For inquiries, contact [brunoleej@gmail.com](mailto:brunoleej@gmail.com)
-
 ## 🛠️ Tech Stack
 
 | Component     | Description                                   |
