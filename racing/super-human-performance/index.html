@@ -150,7 +150,7 @@
                         <iframe 
                             width="100%" 
                             height="500" 
-                            src="https://youtu.be/Zeyv1bN9v4A?si=r5NQ9pwN7tuXeVet" 
+                            src="https://www.youtube.com/embed/Zeyv1bN9v4A" 
                             title="Super-Human Performance in Gran Turismo Sports Using Deep Reinforcement Learning" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -242,7 +242,7 @@
                             <p>But here’s the twist: fast driving often means flirting with the edge of control. To prevent the AI from simply bouncing off track walls (a cheap but effective strategy), the reward includes a penalty for wall contact, scaled by the car’s kinetic energy. The final reward at each timestep \(t\) is:</p>
                             
                             <p>\[r_t = r^{\text{prog}}_t - \begin{cases}
-                                c_w |\mathbf{v}_t|^2 & \text{if wall contact} \
+                                c_w |\mathbf{v}_t|^2 & \text{if wall contact} \\
                                 0 & \text{otherwise}
                                 \end{cases}\]</p>
 
