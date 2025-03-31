@@ -56,7 +56,7 @@ Each paper includes:
 - Socials: Twitter, GitHub, LinkedIn, Email
 - Legal: Privacy Policy, Terms of Service
 - Copyright:
-  > ©2025 Paper Reviews. All content is the intellectual property of Bruno Lee. For inquiries, contact [brunoleej@gmail.com](mailto:brunoleej@gmail.com)
+  - ©2025 Paper Reviews. All content is the intellectual property of Bruno Lee. For inquiries, contact [brunoleej@gmail.com](mailto:brunoleej@gmail.com)
 
 ## 🛠️ Tech Stack
 
