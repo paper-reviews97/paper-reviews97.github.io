@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320">
+  <!-- Definitions for gradients -->
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F4F0FF" />
+      <stop offset="100%" stop-color="#F9F8FC" />
+    </linearGradient>
+    <linearGradient id="primaryRowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f4f0ff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#f4f0ff" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Headers Row -->
+  <rect x="50" y="30" width="120" height="50" fill="url(#headerGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="170" y="30" width="160" height="50" fill="url(#headerGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="330" y="30" width="100" height="50" fill="url(#headerGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="430" y="30" width="100" height="50" fill="url(#headerGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="530" y="30" width="100" height="50" fill="url(#headerGradient)" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 1 - Ours -->
+  <rect x="50" y="80" width="120" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="170" y="80" width="160" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="330" y="80" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="430" y="80" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="530" y="80" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 2 - Human players (with rowspan=3) -->
+  <rect x="50" y="120" width="120" height="120" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 2a - Fastest lap -->
+  <rect x="170" y="120" width="160" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="330" y="120" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="430" y="120" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="530" y="120" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 2b - Median lap -->
+  <rect x="170" y="160" width="160" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="330" y="160" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="430" y="160" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="530" y="160" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 2c - # participants -->
+  <rect x="170" y="200" width="160" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="330" y="200" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="430" y="200" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="530" y="200" width="100" height="40" fill="url(#primaryRowGradient)" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 3 - Built-in GTS AI (with rowspan=2) -->
+  <rect x="50" y="240" width="120" height="80" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 3a - Lap time -->
+  <rect x="170" y="240" width="160" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="330" y="240" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="430" y="240" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="530" y="240" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Row 3b - Slower than x% -->
+  <rect x="170" y="280" width="160" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="330" y="280" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="430" y="280" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <rect x="530" y="280" width="100" height="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Header texts -->
+  <text x="110" y="60" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Driver</text>
+  <text x="250" y="60" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Metric</text>
+  <text x="380" y="60" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Setting A</text>
+  <text x="480" y="60" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Setting B</text>
+  <text x="580" y="60" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Setting C</text>
+  
+  <!-- Row 1 texts - Ours -->
+  <text x="110" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Ours</text>
+  <text x="250" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">Lap time [min]</text>
+  <text x="380" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#6E56CF">01:15.913</text>
+  <text x="480" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#6E56CF">01:39.408</text>
+  <text x="580" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#6E56CF">02:06.701</text>
+  
+  <!-- Row 2 texts - Human players -->
+  <text x="110" y="180" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Human players</text>
+  
+  <!-- Row 2a texts - Fastest lap -->
+  <text x="250" y="145" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">Fastest lap [min]</text>
+  <text x="380" y="145" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">01:16.062</text>
+  <text x="480" y="145" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">01:39.445</text>
+  <text x="580" y="145" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">02:07.319</text>
+  
+  <!-- Row 2b texts - Median lap -->
+  <text x="250" y="185" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">Median lap [min]</text>
+  <text x="380" y="185" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">01:22.300</text>
+  <text x="480" y="185" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">01:47.259</text>
+  <text x="580" y="185" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">02:13.980</text>
+  
+  <!-- Row 2c texts - # participants -->
+  <text x="250" y="225" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A"># participants</text>
+  <text x="380" y="225" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">52,303</text>
+  <text x="480" y="225" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">28,083</text>
+  <text x="580" y="225" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">52,335</text>
+  
+  <!-- Row 3 texts - Built-in GTS AI -->
+  <text x="110" y="280" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0F172A">Built-in GTS AI</text>
+  
+  <!-- Row 3a texts - Lap time -->
+  <text x="250" y="265" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">Lap time [min]</text>
+  <text x="380" y="265" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">01:26.899</text>
+  <text x="480" y="265" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">01:52.075</text>
+  <text x="580" y="265" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">02:14.252</text>
+  
+  <!-- Row 3b texts - Slower than x% -->
+  <text x="250" y="305" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">Slower than x%</text>
+  <text x="380" y="305" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">82.6%</text>
+  <text x="480" y="305" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">80.4%</text>
+  <text x="580" y="305" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#0F172A">53.9%</text>
+</svg>

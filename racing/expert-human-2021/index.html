@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deep dive analysis of 'Expert Human-Level Driving in Gran Turismo Sport Using Deep Reinforcement Learning with Image-based Representation' - Research paper review">
+    <title>Paper Review - Expert Human-Level Driving in Gran Turismo Sport Using Deep Reinforcement Learning with Image-based Representation</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/paper-review.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <div class="header-sensor"></div>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#F4F0FF"/>
+                        <path d="M20 8L32 14.5V27.5L20 34L8 27.5V14.5L20 8Z" stroke="#6E56CF" stroke-width="2"/>
+                        <path d="M20 21V34M20 8V21M8 14.5L20 21L32 14.5" stroke="#6E56CF" stroke-width="2"/>
+                        <circle cx="20" cy="21" r="3" fill="#6E56CF"/>
+                    </svg>
+                    <h1 class="logo-text">Paper Reviews</h1>
+                </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="https://paper-reviews97.github.io" class="nav-link">Home</a></li>
+                        <li><a href="../../../index.html#categories" class="nav-link">Categories</a></li>
+                        <li><a href="https://paper-reviews97.github.io#featured" class="nav-link">Featured</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="#" class="btn btn-primary">Subscribe</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Paper header -->
+    <section class="paper-header">
+        <div class="container">
+            <div class="paper-header-content">
+                <div class="breadcrumb">
+                    <a href="./../../">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="./../../index.html#categories">Categories</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="/">Racing</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Expert Human-Level Driving in Gran Turismo Sport Using Deep Reinforcement Learning with Image-based Representation</span>
+                </div>
+                
+                <div class="paper-metadata">
+                    <div class="paper-category-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Racing</span>
+                    </div>
+                    <span class="paper-year">2021</span>
+                    <span class="paper-journal">arXiv</span>
+                    <span class="paper-citation-count">5+ citations</span>
+                </div>
+                
+                <h1 class="paper-title">Expert Human-Level Driving in Gran Turismo Sport Using Deep Reinforcement Learning with Image-based Representation</h1>
+                <p class="paper-authors">Ryuji Imamura, Takuma Seno, Kenta Kawamoto, Michael Spranger</p>
+                
+                <div class="paper-link-buttons">
+                    <a href="https://arxiv.org/abs/2111.06449" class="btn btn-secondary" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Original Paper
+                    </a>
+                    <button class="btn btn-outline share-btn" onclick="copyCurrentURL()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.59 13.51L15.42 17.49" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.41 6.51L8.59 10.49" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Share Review
+                    </button>
+                </div>
+                
+                <div class="paper-highlights">
+                    <div class="highlight">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Innovation Level</span>
+                            <span class="highlight-value">Breakthrough</span>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Reviewer Rating</span>
+                            <span class="highlight-value">98% Approval</span>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Impact Factor</span>
+                            <span class="highlight-value">High</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review content -->
+    <section class="paper-review-content">
+        <div class="container">
+            <div class="review-layout">
+                <!-- Main content -->
+                <div class="review-main">
+                    <!-- Abstract card -->
+                    <div class="review-card abstract-card">
+                        <h2 class="review-section-title">Abstract</h2>
+                        <div class="review-section-content">
+                            <p>When humans play virtual racing games, they use visual environmental information on the game screen to understand the rules within the environments. In contrast, a state-of-the-art realistic racing game AI agent that outperforms human players does not use image-based environmental information but the compact and precise measurements provided by the environment. In this paper, a vision-based control algorithm is proposed and compared with human player performances under the same conditions in realistic racing scenarios using Gran Turismo Sport (GTS), which is known as a high-fidelity realistic racing simulator. In the proposed method, the environmental information that constitutes part of the observations in conventional state-of-the-art methods is replaced with feature representations extracted from game screen images. We demonstrate that the proposed method performs expert human-level vehicle control under high-speed driving scenarios even with game screen images as high-dimensional inputs. Additionally, it outperforms the built-in AI in GTS in a time trial task, and its score places it among the top 10% approximately 28,000 human players.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Takeaways -->
+                    <div class="review-card">
+                        <h2 class="review-section-title">Key Takeaways</h2>
+                        <div class="review-section-content">
+                            <div class="takeaways-grid">
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">1</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Expert-Human Performance with Vision-Based Control</h3>
+                                        <p class="takeaway-description">This paper demonstrates that an AI agent can achieve expert human-level driving performance in Gran Turismo Sport using only game screen images as the primary input. This challenges the conventional approach of relying on precise, simulator-provided measurements.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">2</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Image-Based Representation Learning</h3>
+                                        <p class="takeaway-description">The study proposes a two-phase approach: first, learning feature representations from game screen images, and then using these representations to train a vehicle control policy. This separation allows for higher resolution images and reduces training time for the policy network.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">3</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Outperforming Built-in AI and Matching Top Human Players</h3>
+                                        <p class="takeaway-description">The trained AI controller not only outperforms the built-in AI in Gran Turismo Sport but also achieves a lap time within the top 10% of approximately 28,000 human players. This result validates the effectiveness of the vision-based control approach.</p>
+                                    </div>
+                                </div>
+
+                                <div class="takeaway-item">
+                                    <div class="takeaway-icon">4</div>
+                                    <div class="takeaway-content">
+                                        <h3 class="takeaway-title">Near-Optimal Trajectory Learning</h3>
+                                        <p class="takeaway-description">The AI agent learns to drive on near-optimal trajectories, closely avoiding contact with the inner walls of the track. This indicates that the agent can accurately recognize its position relative to the track from the game screen images.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review sections - Introduction -->
+                    <div class="review-card" id="introduction">
+                        <h2 class="review-section-title">Introduction</h2>
+                        <div class="review-section-content">
+                            <p>This paper presents a method for achieving expert human-level driving performance in the realistic racing simulator Gran Turismo Sport (GTS) using deep learning. Unlike state-of-the-art AI agents that rely on precise, simulator-provided measurements, humans primarily use visual information from the game screen. This study proposes a vision-based control algorithm that replaces environmental information with feature representations extracted from game screen images, comparing its performance to that of human players.</p>
+                            <p>The goal is to demonstrate that expert human-level vehicle control is achievable using only high-dimensional game screen images as input. The proposed method outperforms the built-in AI in GTS and achieves a lap time within the top 10% of approximately 28,000 human players. This suggests that visual information alone can enable human-level performance without the need for precise environmental data.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Methodology -->
+                    <div class="review-card" id="methodology">
+                        <h2 class="review-section-title">Methodology</h2>
+                        <div class="review-section-content">
+                            <p>Methodology consists of two phases:</p>
+                            <p><Strong>🎯 Phase 1: Image-Based Representation Learning</Strong></p>
+                            <p>A feature extraction network, \(\varphi_{rep}\), is trained to map game screen images, \(I \in \mathbb{R}^{H \times W \times C}\), to a lower-dimensional embedded representation. This is achieved by regression learning, minimizing the loss function:</p>
+                            
+                            <p>\[l_{rep} = ||o_{env} - \varphi_{reg}(\varphi_{rep}(I))||_2^2,\]</p>
+
+                            <p>where \(o_{env} \in \mathbb{R}^{D_{env}}\) represents the environmental observation vector (distance to track edges, centerline, angle, curvature). \(\varphi_{reg}\) is a subsequent network layer.  The network is trained offline using a dataset of approximately 630,000 game screen images captured from various points on the racetrack, obtained by adding noise to the built-in AI. The network architecture uses space2depth and depth-wise separable convolution for efficient inference. \(D_{env}\) is set to 27, and the embedded representation size \(D_{rep}\) is 64. The curvatures are sampled at 10 points 40-120m ahead.</p>
+                            
+                            <p><strong>🎯 Phase 2: Reinforcement Learning using Learned Representation</strong></p>
+                            <p>A policy network, \(\varphi_p\), is trained using the Soft Actor-Critic (SAC) algorithm. The policy network takes as input the embedded representation, \(o_{env}\), from Phase 1 along with dedicated features (3D linear velocity, 3D linear acceleration, angular velocity, wall contact, previous steering command) \(o \in \mathbb{R}^{D_{rep}+D_{ded}}\) from the simulator. The policy network outputs throttle/brake and steering values \(a_t \in \mathbb{R}^2\):</p>
+                            <p>\[a_t = \varphi_p(o),\]</p>
+
+                            <p>where \(a_t\) consists of \(\delta_t \in [-\frac{\pi}{6}, \frac{\pi}{6}]\) (steering angle) and \(\omega_t \in [-1, 1]\) (throttle/brake). The reward function maximizes course progress while penalizing wall collisions:</p>
+                            <p>\[r_t = r_{prog_t} - \begin{cases} c_w ||v_t||^2 & \text{if in contact with wall} \\ 0 & \text{otherwise} \end{cases}\]</p>
+
+                            <p>where \(r_{prog_t}\) is the reward for course progress, \(v_t = [v_x, v_y, v_z]\) is the linear velocity, and \(c_w\) is a weight coefficient.</p>
+                            <p>Experiments were conducted in GTS using the Mazda Demio XD Turing ’15 and the Tokyo Expressway Central Outer Loop. The results show that the proposed method outperforms the built-in AI and performs within the top 10% of approximately 28,000 human players.</p>
+                            
+                            <figure class="review-figure">
+                                <img src="https://imgur.com/vPfbBFY.png" alt="method1" style="display: block; margin: 0 auto; width: 100%; max-width: 800px;" class="image-medium">
+                                <figcaption>Figure 1. This system uses deep learning to train an AI agent that drives in Gran Turismo Sport using both visual information from the game screen and direct sensor data, achieving expert human-level performance.</figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="review-card" id="results">
+                        <h2 class="review-section-title">Results</h2>
+                        <div class="review-section-content">
+                            <figure class="review-figure">
+                                <img src="https://imgur.com/L9acS0l.png" alt="results1" class="image-medium">
+                                <figcaption>Figure 2. (<strong>Left</strong>) Examples of the Gran Turismo Sport game screen, driving a Mazda Demio on the
+                                    "Tokyo Expressway - Central Outer Loop." (<strong>Right</strong>) Examples of trajectories (blue line) collected by
+                                    disrupted operations to observe various points on the course.</figcaption>
+                            </figure>
+                            
+                            <p>This new AI uses a clever two-step process:</p>
+
+                            <ul>
+                                <li><strong>Learn to "See"</strong>: The AI first learns to understand the game screen, extracting important features like the car's position on the track and upcoming turns. Researchers captured game screen images, like the ones in Figure 2 (Left), and used them to train the AI to recognize key elements of the racing environment. Figure 2 (Right) shows how they collected diverse training data by intentionally disrupting the built-in AI's driving.</li>
+                                <li><strong>Learn to Drive</strong>: Then, using that visual understanding, the AI learns to control the car, steering, accelerating, and braking to achieve the fastest lap times.</li>
+                            </ul>
+                            
+                            <figure class="review-figure">
+                                <img src="https://imgur.com/h3kvkdm.png" alt="method1" style="display: block; margin: 0 auto; width: 100%; max-width: 800px;" class="image-medium">
+                                <figcaption>Figure 3. </figcaption>
+                            </figure>
+
+                            <figure class="review-figure">
+                                <img src="https://imgur.com/UP7aDDg.png" alt="method1" style="display: block; margin: 0 auto; width: 100%; max-width: 800px;" class="image-medium">
+                                <figcaption>Figure 4. The trajectories of our agent during the evaluation driving in different sections (blue line).
+                                    When a vehicle hits the walls, the impact causes it to not only slow down and disrupt the driving
+                                    operation but also deviate from its optimal path. The trajectory of our agent is smooth and shows that
+                                    our controller can drive the car without hitting a wall.</figcaption>
+                            </figure>
+
+                            <p>So, how did this vision-based AI stack up against the competition?</p>
+                            <ul>
+                                <li><strong>Smashed the Built-in AI</strong>: The AI agent absolutely crushed the lap times of the built-in AI in Gran Turismo Sport, beating it by a whopping 9.4 seconds!</li>
+                                <li><strong>Top 10% Human Performance</strong>: But here's the really impressive part: the AI's lap times put it in the top 10% of over 28,000 human players! That's right, this AI is driving at an expert human level, using only what it "sees" on the screen. Figure 3 (Left) shows just how well the AI performed compared to the distribution of human player lap times. The AI (yellow line) significantly outperformed both the built-in AI (blue line) and the median human player (red line).</li>
+                                <li><strong>Close to the Pros</strong>: While the AI didn't quite beat the absolute fastest human players (who have access to years of experience and finely-tuned skills), it came remarkably close, lagging behind by only about 3.3 seconds.</li>
+                                <li><strong>Learning Progress</strong>: Figure 3 (Right) illustrates how the AI's performance improved over time during training. Even with different starting points, the AI consistently learned to drive faster and faster.</li>
+                                <li><strong>Smooth Driving</strong>: Figure 4 shows the AI's driving trajectory through various corners. The AI was able to navigate the track smoothly and efficiently, hugging the walls without crashing.</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Discussion -->
+                    <div class="review-card" id="discussion">
+                        <h2 class="review-section-title">Discussion</h2>
+                        <div class="review-section-content">
+                            <p>This research is a huge step forward for AI in several ways:</p>
+                            <ul>
+                                <li><strong>Human-Like AI</strong>: By using visual information, the AI is learning to solve problems in a way that's more similar to how humans do it.</li>
+                                <li><strong>Real-World Applications</strong>: This technology could eventually be used to develop more advanced driver-assistance systems or even fully autonomous vehicles that can navigate complex environments using only cameras.</li>
+                                <li><strong>Inspiration for Gamers</strong>: It proves that even without perfect information, a well-trained AI can achieve amazing results. Maybe it's time to rethink your racing strategy!</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Conclusion -->
+                    <div class="review-card" id="conclusion">
+                        <h2 class="review-section-title">Conclusion</h2>
+                        <div class="review-section-content">
+                            <p>The results are in, and they're groundbreaking! This research has successfully demonstrated that an AI agent can achieve expert human-level driving performance in Gran Turismo Sport using only visual information extracted from the game screen. This vision-based control algorithm represents a significant step forward in the field of autonomous driving.</p>
+                            <p><strong>What's Next?</strong></p>
+                            <p>Autonomous Racing research is ongoing, and we plan to explore several exciting directions:</p>
+                            <ul>
+                                <li><strong>Validating Feature Representations</strong>: We aim to further analyze the acquired feature representations to ensure the AI is truly understanding the environment and not just relying on superficial cues.</li>
+                                <li><strong>Multi-Image Analysis</strong>: We plan to incorporate multiple images to better mimic human observation conditions and capture dynamic information like acceleration and angular velocity.</li>
+                                <li><strong>Exploring End-to-End Learning</strong>: We will investigate completely end-to-end learning approaches to further optimize the AI's performance.</li>
+                            </ul>
+                        
+                            <p>This is just the beginning of a new era for AI in autonomous systems. By combining the power of deep learning with vision-based control, we're paving the way for a future where AI can drive, navigate, and interact with the world in a more intelligent and human-like way.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Reviewer notes -->
+                    <div class="review-card reviewer-notes">
+                        <h2 class="review-section-title">Reviewer Notes</h2>
+                        <div class="review-section-content">
+                            <!-- summary section -->
+                            <div class="review-summary-section">
+                                <h3 class="summary-section-title">Key Points</h3>
+                                
+                                <div class="review-line">
+                                    <div class="line-number">1</div>
+                                    <div class="line-content">
+                                        <p>The paper presents a novel approach to achieving expert human-level driving in a realistic racing simulator by using a vision-based control algorithm. This contrasts with existing methods that rely on precise, simulator-provided measurements.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="review-line">
+                                    <div class="line-number">2</div>
+                                    <div class="line-content">
+                                        <p>The proposed method demonstrates strong performance, outperforming the built-in AI in Gran Turismo Sport and achieving lap times within the top 10% of approximately 28,000 human players. This provides compelling evidence for the effectiveness of the approach.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="review-line">
+                                    <div class="line-number">3</div>
+                                    <div class="line-content">
+                                        <p>The two-phase approach, involving image-based representation learning followed by reinforcement learning, is well-structured and allows for efficient training and potentially better generalization.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Gap section -->
+                            <div class="review-gap-section">
+                                <h3 class="gap-section-title">Extended Analysis</h3>
+                                
+                                <div class="gap-line">
+                                    <div class="line-number">1</div>
+                                    <div class="line-content">
+                                        <p>The paper acknowledges the need to further validate the acquired feature representations. A deeper analysis is needed to ensure that the AI is truly understanding the environment and not just relying on superficial cues or overfitting to specific image features. Consider experiments that probe the learned representations, such as visualizing the features or testing their transferability to different tracks or vehicles.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gap-line">
+                                    <div class="line-number">2</div>
+                                    <div class="line-content">
+                                        <p>The paper mentions the intention to compare the proposed method to completely end-to-end learning approaches. A more detailed discussion of the potential advantages and disadvantages of both approaches would be valuable. End-to-end learning might offer greater optimization potential but could also be more difficult to train and interpret.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gap-line">
+                                    <div class="line-number">3</div>
+                                    <div class="line-content">
+                                        <p>While the results are impressive in a simulated environment, the paper could benefit from a discussion of the challenges and limitations of applying this approach to real-world autonomous driving. Factors such as sensor noise, weather conditions, and the complexity of real-world traffic scenarios need to be considered. Are there specific aspects of the simulation that would need to be improved to facilitate real-world transfer?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="review-sidebar">
+                    <!-- TOC -->
+                    <div class="sidebar-card toc-card">
+                        <h3 class="sidebar-title">Table of Contents</h3>
+                        <ul class="toc-list">
+                            <li><a href="#introduction" class="toc-link">Introduction</a></li>
+                            <li><a href="#methodology" class="toc-link">Methodology</a></li>
+                            <li><a href="#results" class="toc-link">Results</a></li>
+                            <li><a href="#discussion" class="toc-link">Discussion</a></li>
+                            <li><a href="#conclusion" class="toc-link">Conclusion</a></li>
+                            <li><a href="#references" class="toc-link">References</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Paper details -->
+                    <div class="sidebar-card details-card">
+                        <h3 class="sidebar-title">Paper Details</h3>
+                        <ul class="details-list">
+                            <li class="details-item">
+                                <span class="detail-label">Published:</span>
+                                <span class="detail-value">2021</span>
+                            </li>
+                            <li class="details-item">
+                                <span class="detail-label">Journal:</span>
+                                <span class="detail-value">arXiv</span>
+                            </li>
+                            <li class="details-item">
+                                <span class="detail-label">DOI:</span>
+                                <span class="detail-value"><a href="https://doi.org/10.48550/arXiv.2111.06449" target="_blank">https://doi.org/10.48550/arXiv.2111.06449</a></span>
+                            </li>
+                            <li class="details-item">
+                                <span class="detail-label">Citations:</span>
+                                <span class="detail-value">5+</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Related papers -->
+                    <div class="sidebar-card related-card">
+                        <h3 class="sidebar-title">Related Papers</h3>
+                        <div class="related-papers">
+                            <a href="https://paper-reviews97.github.io/racing/super-human-performance/" class="related-paper">
+                                <span class="related-paper-title">Super-Human Performance in Gran Turismo Sports Using Deep Reinforcement Learning</span>
+                                <div class="related-paper-meta">
+                                    <span class="related-paper-authors">Florian Fuchs, Yunlong Song, Elia Kaufmann, Davide Scaramuzza, Peter Duerr</span>
+                                    <span class="related-paper-year">2021</span>
+                                </div>
+                            </a>
+                            <a href="#" class="related-paper">
+                                <span class="related-paper-title">Related paper placeholder 2</span>
+                                <div class="related-paper-meta">
+                                    <span class="related-paper-authors">Author et al.</span>
+                                    <span class="related-paper-year">2023</span>
+                                </div>
+                            </a>
+                            <a href="#" class="related-paper">
+                                <span class="related-paper-title">Related paper placeholder 3</span>
+                                <div class="related-paper-meta">
+                                    <span class="related-paper-authors">Author et al.</span>
+                                    <span class="related-paper-year">2022</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="sidebar-card tags-card">
+                        <h3 class="sidebar-title">Tags</h3>
+                        <div class="sidebar-tags">
+                            <a href="#" class="tag">Gran Turismo</a>
+                            <a href="#" class="tag">Reinforcement Learning</a>
+                            <a href="#" class="tag">Autonomous Racing</a>
+                            <a href="#" class="tag">Simulation</a>
+                            <a href="#" class="tag">RL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#F4F0FF"/>
+                            <path d="M20 8L32 14.5V27.5L20 34L8 27.5V14.5L20 8Z" stroke="#6E56CF" stroke-width="2"/>
+                            <path d="M20 21V34M20 8V21M8 14.5L20 21L32 14.5" stroke="#6E56CF" stroke-width="2"/>
+                            <circle cx="20" cy="21" r="3" fill="#6E56CF"/>
+                        </svg>
+                        <span class="logo-text">Paper Reviews</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Illuminating research in AI and robotics through comprehensive paper reviews.
+                    </p>
+                </div>
+                
+                <div class="footer-nav">
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Navigation</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://paper-reviews97.github.io">Home</a></li>
+                            <li><a href="https://paper-reviews97.github.io/#categories">Categories</a></li>
+                            <li><a href="https://paper-reviews97.github.io#featured">Featured</a></li>
+                            <li><a href="https://leejisue.github.io/">About</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://paper-reviews97.github.io/fundamental-networks/">Fundamental Networks</a></li>
+                            <li><a href="../index.html" class="active-footer-link">Racing</a></li>
+                            <li><a href="#">Reinforcement Learning</a></li>
+                            <li><a href="#">Robotics</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-group">
+                        <h4 class="footer-heading">Connect</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="https://leejisue.github.io/">GitHub</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 Paper Reviews. All rights reserved. Unauthorized reproduction or distribution of any materials on this site is strictly prohibited. <br>
+                    All content on this website is the intellectual property of Bruno Lee. For inquiries, please contact: <a href="mailto:brunoleej@gmail.com">brunoleej@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/paper-review.js"></script>
+    <script src="./js/paper-review.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
